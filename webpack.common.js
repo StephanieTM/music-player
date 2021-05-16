@@ -4,7 +4,6 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -50,18 +49,6 @@ module.exports = {
           'css-loader',
           {
             loader: 'less-loader',
-            options: {
-              lessOptions: {
-                modifyVars: {
-                  'primary-color': '#763857',
-                  'secondary-color': '#eeccdd',
-                  'border-radius-base': '5px',
-                  'padding-md': '12px',
-                  'btn-default-color': 'rgba(0, 0, 0, 0.6)'
-                },
-                javascriptEnabled: true,
-              }
-            },
           },
         ],
       },
@@ -102,7 +89,6 @@ module.exports = {
         { from: 'assets/images', to: 'assets/images' },
       ],
     }),
-    new AntdDayjsWebpackPlugin(),
     new webpack.ProgressPlugin({ profile: false }),
   ],
   output: {
