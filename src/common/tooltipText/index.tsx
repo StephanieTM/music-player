@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef, useState } from 'react';
-import { Tooltip } from 'antd';
+import { Tooltip } from '@chakra-ui/react';
 import { ITooltipTextProps } from './interface';
 import './index.less';
 
@@ -32,7 +32,7 @@ export default function TooltipText(props: ITooltipTextProps): JSX.Element {
   }
   
   return (
-    <Tooltip title={title||content} visible={visible}>
+    <Tooltip label={title||content} isOpen={visible}>
       <div ref={contentRef} className="tooltip-text-content">
         {content}
       </div>
