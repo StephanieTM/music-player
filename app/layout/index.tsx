@@ -1,9 +1,9 @@
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { IRouteConfig, mobileRoutes, pcRoutes } from 'app/routers/routes';
-import GlobalStore from './global-store';
-import PCLayout from './pc';
-import MobileLayout from './mobile';
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Spinner } from '@chakra-ui/react';
+import { IRouteConfig, routes as allRoutes } from 'app/routers/routes';
+import Header from './Header';
+import './index.less';
 
 function getRoutes(allRouters: IRouteConfig[]): IRouteConfig[] {
   const getFlattenRoutes = (routeItem: IRouteConfig[] = allRouters, result: IRouteConfig[] = []): IRouteConfig[] => {
@@ -21,12 +21,30 @@ function getRoutes(allRouters: IRouteConfig[]): IRouteConfig[] {
 }
 
 export default function AppLayout(): JSX.Element {
-  const { isMobile } = GlobalStore.useContainer();
-  const routes = getRoutes(isMobile ? mobileRoutes : pcRoutes);
+  const routes = getRoutes(allRoutes);
+  const spinner = (
+    <div className="app-spinner">
+      <Spinner
+        size="md"
+        thickness="4px"
+        speed="0.65s"
+        emptyColor="gray.200"
+        color="cyan.500"
+      />
+    </div>
+  );
 
   return (
     <Router>
-      {isMobile ? <MobileLayout routes={routes} /> : <PCLayout routes={routes} />}
+      <Header />
+      <Suspense fallback={spinner}>
+        <Switch>
+          {routes.map(route => (route.component && route.link) ?
+            <Route key={route.link} exact path={route.link} component={lazy(route.component)} /> :
+            null
+          )}
+        </Switch>
+      </Suspense>
     </Router>
   );
 }
