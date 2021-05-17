@@ -1,0 +1,1 @@
+(self.webpackChunkfe_proj=self.webpackChunkfe_proj||[]).push([[728],{1728:function(e,n,t){"use strict";t.r(n),t.d(n,{default:function(){return c}});var r=t(7294),u=t(3727);function c(){return r.createElement("div",null,r.createElement(u.rU,{to:"/us/the-song"},"Our Song"))}}}]);
