@@ -35,7 +35,7 @@ export default function AppLayout(): JSX.Element {
   );
 
   return (
-    <Router>
+    <Router basename="/music-player">
       <Header />
       <Suspense fallback={spinner}>
         <Switch>
