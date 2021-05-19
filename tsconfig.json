@@ -22,6 +22,8 @@
     "paths": {
       "app": ["./app"],
       "app/*": ["./app/*"],
+      "configs": ["./configs"],
+      "configs/*": ["./configs/*"],
       "src": ["./src"],
       "src/*": ["./src/*"],
       "common": ["./src/common"],

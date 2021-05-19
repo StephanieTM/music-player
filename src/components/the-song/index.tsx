@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@chakra-ui/react';
+import config from 'configs';
 import Lyrics from './Lyrics';
 
 export default function TheSong(): JSX.Element {
@@ -26,7 +27,7 @@ export default function TheSong(): JSX.Element {
 
       <audio
         ref={audioRef}
-        src="/assets/songs/the-song.mp3"
+        src={`${config.COS_DOMAIN}/assets/the-song.mp3`}
         hidden
       />
     </div>
