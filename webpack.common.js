@@ -80,8 +80,6 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'assets/images', to: 'assets/images' },
-        { from: 'assets/songs', to: 'assets/songs' },
-        { from: 'assets/lyrics', to: 'assets/lyrics' },
       ],
     }),
     new webpack.ProgressPlugin({ profile: false }),
