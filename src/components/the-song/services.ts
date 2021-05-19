@@ -1,4 +1,5 @@
 import axios from 'axios';
+import configs from 'configs';
 import { ILyricJson } from './interface';
 
-export const getLyricJson = (): Promise<ILyricJson> => axios.get('/music-player/assets/lyrics/the-song.json')
+export const getLyricJson = (): Promise<ILyricJson> => axios.get(`${configs.COS_DOMAIN}/assets/the-song.json`);

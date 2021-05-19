@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import 'focus-visible';
 import { ChakraProvider } from '@chakra-ui/react';
-import { configAxios } from './utils/axios-config';
+import { configAxios } from 'configs/axios-config';
 import { theme } from './theme';
 import AppLayout from './layout';
 import GlobalStore from './layout/global-store';

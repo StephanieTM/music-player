@@ -3,7 +3,7 @@ import { createStandaloneToast } from '@chakra-ui/react';
 
 const toast = createStandaloneToast();
 
-export function configAxios() {
+export function configAxios(): void {
   axios.interceptors.response.use(response => {
     return response.data;
   }, error => {
