@@ -14,7 +14,7 @@ export default function Lyrics(): JSX.Element {
       <p>{lyric?.title}</p>
       <p>{lyric?.artist}</p>
       {lyric?.lyrics.map(({ content, timeTag }, index) => (
-        <p key={`${timeTag}-${index}`}>{content}</p>
+        <p key={`${timeTag}-${index}`}>{content} {timeTag}</p>
       ))}
     </div>
   );
