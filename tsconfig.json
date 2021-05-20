@@ -27,7 +27,9 @@
       "src": ["./src"],
       "src/*": ["./src/*"],
       "common": ["./src/common"],
-      "common/*": ["./src/common/*"]
+      "common/*": ["./src/common/*"],
+      "hooks": ["./src/common/hooks"],
+      "hooks/*": ["./src/common/hooks/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
