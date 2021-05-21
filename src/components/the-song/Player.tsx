@@ -5,7 +5,7 @@ import Lyrics from './Lyrics';
 import LocalStore from './local-store';
 
 export default function Player(): JSX.Element {
-  const { audioRef, isPlaying, setIsPlaying, currentTime, setCurrentTime, duration, setDuration, jump, play } = LocalStore.useContainer();
+  const { audioRef, isPlaying, setIsPlaying, setCurrentTime, setDuration, jump, play } = LocalStore.useContainer();
 
   useEffect(() => {
     if (audioRef.current) {
@@ -27,14 +27,10 @@ export default function Player(): JSX.Element {
   }
 
   return (
-    <div>
-      <Button onClick={() => setIsPlaying(!isPlaying)}>
+    <div className="player-container">
+      <Button style={{ display: 'none' }} onClick={() => setIsPlaying(!isPlaying)}>
         {isPlaying ? 'Pause' : 'Play'}
       </Button>
-
-      <div>duration: {duration}</div>
-
-      <div>currentTime: {currentTime}</div>
 
       <Lyrics />
 

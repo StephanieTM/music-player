@@ -2,7 +2,6 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Spinner } from '@chakra-ui/react';
 import { IRouteConfig, routes as allRoutes } from 'app/routers/routes';
-import Header from './Header';
 import './index.less';
 
 function getRoutes(allRouters: IRouteConfig[]): IRouteConfig[] {
@@ -36,7 +35,6 @@ export default function AppLayout(): JSX.Element {
 
   return (
     <Router basename="/music-player">
-      <Header />
       <Suspense fallback={spinner}>
         <Switch>
           {routes.map(route => (route.component && route.link) ?

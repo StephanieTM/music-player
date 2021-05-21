@@ -10,6 +10,7 @@ function useLocalStore(): IValue {
   const [currentTime, setCurrentTime] = useState<number>(0);
   const [duration, setDuration] = useState<number>(0);
   const [lyricJson, setLyricJson] = useState<ILyricJson>({ title: '', artist: '', lyrics: [] });
+  const [activeLrcIndex, setActiveLrcIndex] = useState<number>(-1);
   const prevIsPlaying = usePrevious(isPlaying);
 
   // iOS限制audio.play()只能在点击等事件的回调中执行，故在useEffect(componentDidUpdate)中调用时没有效果，此处模拟getDerivedStateFromProps
@@ -35,10 +36,10 @@ function useLocalStore(): IValue {
   }
 
   function jump(timeTag: string): void
-  function jump(timeTag: number): void
-  function jump(timeTag: string|number): void {
+  function jump(timeSec: number): void
+  function jump(time: string|number): void {
     if (audioRef.current) {
-      audioRef.current.currentTime = typeof timeTag === 'number' ? timeTag : calcSec(timeTag);
+      audioRef.current.currentTime = typeof time === 'number' ? time : calcSec(time);
     }
   }
 
@@ -52,6 +53,8 @@ function useLocalStore(): IValue {
     setIsPlaying,
     lyricJson,
     setLyricJson,
+    activeLrcIndex,
+    setActiveLrcIndex,
     toggleState,
     play,
     pause,
