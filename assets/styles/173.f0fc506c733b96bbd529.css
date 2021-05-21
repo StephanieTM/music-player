@@ -1,0 +1,42 @@
+.land-page-container {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(200deg, #ff7a18, #af002d 30%, #319197 80%);
+}
+.land-page-container .text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+.land-page-container .down {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.land-page-container .down img {
+  padding: 5vh;
+  cursor: pointer;
+}
+.player-container {
+  background: linear-gradient(20deg, #7118ff, #1a00af 30%, #319197 70%);
+}
+.lyric-container {
+  height: 100vh;
+  padding: 30px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.lyric {
+  color: black;
+  cursor: pointer;
+}
+.lyric.active {
+  color: orange;
+}
+
