@@ -1,14 +1,11 @@
+.the-song-container {
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+}
+
 .land-page-container {
   position: relative;
   height: 100vh;
-  // background-color: #0987a0;
-  background:
-    linear-gradient(
-      200deg,
-      #ff7a18,
-      #af002d 30%,
-      #319197 80%
-    );
 
   .text-container {
     display: flex;
@@ -16,6 +13,8 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    font-weight: 600;
+    color: #fff;
     text-align: center;
   }
 
@@ -35,27 +34,22 @@
 }
 
 .player-container {
-  background:
-    linear-gradient(
-      20deg,
-      #7118ff,
-      #1a00af 30%,
-      #319197 70%
-    );
+  padding: 10vh 0;
 }
 
 .lyric-container {
-  height: 100vh;
+  height: 80vh;
   padding: 30px;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
 
 .lyric {
-  color: black;
+  color: rgb(255 255 255 / 50%);
   cursor: pointer;
 
   &.active {
-    color: orange;
+    font-weight: 600;
+    color: #ce9324;
   }
 }
