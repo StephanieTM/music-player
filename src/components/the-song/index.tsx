@@ -7,8 +7,10 @@ import './index.less';
 export default function TheSong(): JSX.Element {
   return (
     <LocalStore.Provider>
-      <LandPage />
-      <Player />
+      <div className="the-song-container">
+        <LandPage />
+        <Player />
+      </div>
     </LocalStore.Provider>
   );
 }
