@@ -76,7 +76,7 @@ module.exports = {
   plugins: [
     // clean dir before build
     new CleanWebpackPlugin(),
-    // generate index.html file
+    // copy image assets to build dir
     new CopyWebpackPlugin({
       patterns: [
         { from: 'assets/images', to: 'assets/images' },
