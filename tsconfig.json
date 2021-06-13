@@ -44,6 +44,8 @@
   "exclude": [],
   "include": [
     "./app",
-    "./src"
+    "./src",
+    "./configs",
+    "./interface"
   ]
 }
